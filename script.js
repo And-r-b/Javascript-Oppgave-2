@@ -25,15 +25,15 @@ funksjonen)
 
 // klassiske funksjonen
 
-let numbers = 6 // "Partall", Endrer du til 3 så vil det stå "Oddetall"
+let numbers = 6 // Her kan du skrive enten 3 eller 6
 function myNumber() {
-    if (numbers === 3) {
+    if (numbers === 3) { //Hvis tallet er 3 så vil det retunere stringen "Oddetall"
         return "Oddetall";
-    }else (numbers === 6);
+    }else (numbers === 6); // Hvis tallet er 6 så vil det retunere stringen "Partall"
         return "Partall"
 }
 
-console.log(myNumber())
+console.log(myNumber()) // Vi console logger funksjon variabelen sånn at vi kan få svaret i console på nettleseren.
 
 
 
@@ -52,10 +52,11 @@ Eksempel: "Dette er kult" skal returnere "DETTE ER KULT!"
 // Skriv koden for oppgave 2 her
 
 let myText = () => {
-    "Dette er kult!"
+     const text = "Dette er kult!";
+    return text.toUpperCase();
 }
 
-console.log
+console.log(myText())
 
 /******************************************************************************
 3.
@@ -80,6 +81,33 @@ Hvis ingen timeverdi mottas, skal funksjonen returnere en feilmelding.
 ******************************************************************************/
 
 // Skriv koden for oppgave 3 her
+
+const myName = "Andreas";                   // Navn på Person (Tokk mitt navn som et eksempel)
+
+function checkTime (hour) {                 // satt parameter navn for time verdien.
+    if (hour >= 1 && hour <= 5) {           // Sjekker mellom timeverdi 1 og 5 og returnerer "god natt "Navn"
+        return `God Natt ${myName}!`;
+    }else if (hour >= 6 && hour <= 11) {    // Sjekker mellom timeverdi 6 - 11 og returnerer "God Morgen "Navn"
+        return `God Morgen ${myName}!`;
+    }else if (hour >= 12 && hour <= 17) {   // Sjekker mellom timeverdi 12 - 17 og returnerer "God Dag "Navn"
+        return `God Dag ${myName}!`;
+    }else if (hour >= 18 && hour <= 23) {   // Sjekker mellom timeverdi 18 - 23 og returnerer "God Kveld "Navn"
+        return `God Kveld ${myName}!`
+    }else if (hour = 0) {                   // Sjekker hvis timeverdien er 0 og returnerer med "Ugyldig tid!"
+        return "Ugyldig tid!";
+    }else (hour > 23); {                    // Sjekker hvis timeverdien er høyere enn 23 og returnerer med "Ugyldig tid!"
+        return "Ugyldig Tid!";
+    }
+}
+
+// Sjekker om tidene funker med console.log(function(Tall))
+console.log(checkTime(1))
+console.log(checkTime(6))
+console.log(checkTime(12))
+console.log(checkTime(18))
+console.log(checkTime(0))
+console.log(checkTime(24))
+
 
 /******************************************************************************
 4.
@@ -118,6 +146,17 @@ Eksempel 3: "   vanskelig        " skal returnere "gøy".
 ******************************************************************************/
 
 // Skriv koden for oppgave 5 her
+
+// Bruker eksemplene for oppgaven under
+
+function wordChange() {
+    const texting1 = "  Javascript er vanskelig  ";
+    const texting2 = "Det er vanskelig å bruke metoder "
+    const texting3 = "   vanskelig        " 
+    console.log(texting1.replace("vanskelig", "gøy"));
+}
+
+console.log(wordChange())
 
 /******************************************************************************
 6.
