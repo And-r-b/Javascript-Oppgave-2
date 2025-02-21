@@ -126,6 +126,11 @@ Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
 
 // Skriv koden for oppgave 4 her
 
+let color = ["Rød", "Grønn", "Blå", "Gul"];
+
+let parOfArray = color.slice(1, 3);
+console.log(parOfArray);
+
 /******************************************************************************
 5.
 
@@ -153,10 +158,13 @@ function wordChange() {
     const texting1 = "  Javascript er vanskelig  ";
     const texting2 = "Det er vanskelig å bruke metoder "
     const texting3 = "   vanskelig        " 
-    console.log(texting1.replace("vanskelig", "gøy"));
-}
 
-console.log(wordChange())
+    //Alle har mellomrom og navn som må endres så da tar vi å bruker replace() for ordet "vanskelig" også bruker vi trim() for å fjerne mellomromene.
+    console.log(texting1.replace("vanskelig", "gøy").trim());
+    console.log(texting2.replace("vanskelig", "gøy").trim());
+    console.log(texting3.replace("vanskelig", "gøy").trim());
+}
+console.log(wordChange()); // Etter at vi har gjort koden så bruker vi console.log på utsida for å få logge svaret ut.
 
 /******************************************************************************
 6.
@@ -182,6 +190,37 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 ******************************************************************************/
 
 // Skriv koden for oppgave 6 her
+
+// Alt har blitt console.log() et føre de ble fjernet for litt finere vising i console.
+
+// Steg 1
+items.shift();
+
+/* Steg 2: Måtte søke litt for å finne ut av at man kan ikke bruke replace inni ein array.
+ så må konvertere arrayen til ein string også sette den tilbake igjen med split()
+ Det ser da ut some dette.                                                              */
+
+let joiningString = items.join(" ");
+joiningString = joiningString.replace("Visklær", "Linjal")
+const modifiedString = joiningString.split(" ");
+
+// Steg 3 Splice metoden
+
+modifiedString.splice(0, 2, "Markeringspenn");
+
+// Steg 4
+const finalized = modifiedString.join(" | ");
+
+// Siste Steg
+
+console.log(finalized);
+
+// Ekstra utfordring | Tok litt søking for å finne ut et eksempel på hvordan det kan bli gjort.
+//  Men skal prøve å skrive det jeg kan
+
+const newArray = modifiedString.filter(word => word.includes("e"));
+
+console.log(newArray);
 
 /******************************************************************************
 7.
